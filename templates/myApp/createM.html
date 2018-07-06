@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title>留言</title>
+        <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" crossorigin="anonymous">
+        <style>
+            .creatM{
+                position: absolute;
+                top:50px;
+                left: 600px;
+                width: 350px;
+                height: 300px;
+                background: lightpink;
+                font-family:"STXingkai";
+                font-size: 20px;
+
+            }
+
+            .creatM h2{
+                text-align: center;
+{#                font-family:"STXingkai";#}
+            }
+            .creatM #cForm{
+                text-align: center;
+            }
+
+        </style>
+    </head>
+    <body>
+    <div class="creatM">
+        <h2>留言</h2> <!--h1-> h6-->
+        <form action="/saveM/" method="POST" novalidate="novalidate" id="cForm">
+        {% csrf_token %}
+        {{request.user.username}}
+            <table class="table">
+                <label>用户名:</label> {{username}}<br /><br />
+                <label>标  题:</label> <input type="text"  name="title" required id="usertitle"  placeholder="标题" /><br /><br />
+                <label>内  容:</label> <textarea   name="content" required id="usercontent"   placeholder="内容"></textarea><br /><br />
+            </table>
+            <input class="btn btn-success" type="submit" value="留言"/>
+        </form>
+    </div>
+    </body>
+</html>

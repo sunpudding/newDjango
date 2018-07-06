@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="zh-CN"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Login</title>
+      <script src="https://cdn.bootcss.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+  </head>
+<style>
+        html,body{text-align:center;margin:0px auto;}
+</style>
+<body>
+<h1>登录页面</h1>
+<form method = 'post' enctype="multipart/form-data">
+    {{userform.as_p}}
+<input type="hidden" name="next" value="next" />
+<input type="submit" value = "登录" />
+     <a href="/logout/"><input type="button" value="注销" class="btn btn-danger"></a>
+    <a href="/changepwd/"><input type="button" value="修改密码" class="btn btn-danger"></a>
+</form>
+</body>
+</html>
